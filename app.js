@@ -16,9 +16,18 @@ app.message("hello", async ({ message, say }) => {
 	}
 });
 
+function sendMessage() {
+	app.client.chat.postMessage({
+		channel: "slack-integration",
+		text: "This is a test message!",
+	});
+}
+
 (async () => {
 	// Start your app
 	await app.start(process.env.PORT || 3000);
 
 	console.log("⚡️ Bolt app is running!");
+
+	sendMessage();
 })();
