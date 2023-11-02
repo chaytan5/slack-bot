@@ -1,4 +1,6 @@
 const { App } = require("@slack/bolt");
+const bigquery = require("./bigQuery");
+
 require("dotenv").config();
 
 const app = new App({
